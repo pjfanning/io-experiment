@@ -21,7 +21,7 @@ import java.io.InputStream;
 /**
  * Simple, fast and repositionable byte-array input stream.
  * It is derived from
- * ttps://github.com/vigna/fastutil/blob/master/src/it/unimi/dsi/fastutil/io/FastByteArrayInputStream.java
+ * https://github.com/vigna/fastutil/blob/master/src/it/unimi/dsi/fastutil/io/FastByteArrayInputStream.java
  *
  * <p><strong>Warning</strong>: this class implements the correct semantics
  * of {@link #read(byte[], int, int)} as described in {@link java.io.InputStream}.
@@ -32,13 +32,13 @@ import java.io.InputStream;
 public class FastByteArrayInputStream extends InputStream {
 
     /** The array backing the input stream. */
-    public byte[] array;
+    private final byte[] array;
 
     /** The first valid entry. */
-    public int offset;
+    private final int offset;
 
     /** The number of valid bytes in {@link #array} starting from {@link #offset}. */
-    public int length;
+    private final int length;
 
     /** The current position as a distance from {@link #offset}. */
     private int position;
