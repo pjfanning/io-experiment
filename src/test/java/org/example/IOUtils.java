@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-final class IOUtils {
+public final class IOUtils {
     private IOUtils() {}
 
     public static byte[] toByteArray(InputStream input) throws IOException {
