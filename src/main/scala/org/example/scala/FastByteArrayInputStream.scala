@@ -83,8 +83,19 @@ class FastByteArrayInputStream(array: Array[Byte], offset: Int, length: Int) ext
     }
   }
 
+
+  /**
+   * Returns the current stream position.
+   *
+   * @return the current stream position.
+   */
   def position(): Long = pos
 
+  /**
+   * Sets the current stream position.
+   *
+   * @param newPosition the new stream position.
+   */
   def position(newPosition: Long): Unit = {
     pos = Math.min(newPosition, length).toInt
   }

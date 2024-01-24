@@ -46,7 +46,8 @@ public class FastByteArrayInputStream extends InputStream {
     /** The current mark as a position, or -1 if no mark exists. */
     private int mark;
 
-    /** Creates a new array input stream using a given array fragment.
+    /**
+     * Creates a new array input stream using a given array fragment.
      *
      * @param array the backing array.
      * @param offset the first valid entry of the array.
@@ -107,7 +108,8 @@ public class FastByteArrayInputStream extends InputStream {
         return array[offset + position++] & 0xFF;
     }
 
-    /** Reads bytes from this byte-array input stream as
+    /**
+     * Reads bytes from this byte-array input stream as
      * specified in {@link java.io.InputStream#read(byte[], int, int)}.
      * Note that the implementation given in {@link java.io.ByteArrayInputStream#read(byte[], int, int)}
      * will return -1 on a zero-length read at EOF, contrarily to the specification. We won't.
@@ -122,10 +124,21 @@ public class FastByteArrayInputStream extends InputStream {
         return n;
     }
 
+
+    /**
+     * Returns the current stream position.
+     *
+     * @return the current stream position.
+     */
     public long position() {
         return position;
     }
 
+    /**
+     * Sets the current stream position.
+     *
+     * @param newPosition the new stream position.
+     */
     public void position(final long newPosition) {
         position = (int)Math.min(newPosition, length);
     }
