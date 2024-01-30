@@ -22,3 +22,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jmh {
+    includes = ['org.example.*Output*']
+}
